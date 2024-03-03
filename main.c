@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:41 by seckhard          #+#    #+#             */
-/*   Updated: 2024/02/29 21:39:46 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/03/03 18:09:49 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	main(int argc, char **argv)
 {
 	if (argc == 5 || argc == 6)
 	{
-		// make code
+		// actual program
 	}
 	else
 	{
-		
+		// error handling
 	}
 }

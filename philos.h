@@ -6,15 +6,15 @@
 /*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:51 by seckhard          #+#    #+#             */
-/*   Updated: 2024/02/29 21:24:53 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/03/03 18:28:22 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOS_H
 # define PHILOS_H
 
-# define OK 1
-# define FAILURE 2
+# define OK 0
+# define FAILURE 1
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -25,8 +25,7 @@
 
 #include <sys/time.h>
 #include <limits.h>
-
-typedef struct s_commands	t_commands;
+typedef struct s_table	t_table;
 
 
 typedef struct s_forks
@@ -44,10 +43,10 @@ typedef struct	s_philos
 	pthread_t	number_of_philosophers;
 	t_forks		*left_fork;
 	t_forks		*right_fork;
-	t_commands	*table;
+	t_table		*table;
 }		t_philos;
 
-typedef struct s_commands
+typedef struct s_table
 {	
 	long		time_to_die;
 	long		time_to_eat;
@@ -57,7 +56,7 @@ typedef struct s_commands
 	long		limit_meals;
 	t_forks		*forks;
 	t_philos	*philos;
-}			t_commands;
+}			t_table;
 
 
 
