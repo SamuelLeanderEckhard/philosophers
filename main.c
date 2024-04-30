@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:41 by seckhard          #+#    #+#             */
-/*   Updated: 2024/03/03 18:09:49 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:03:58 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 int	main(int argc, char **argv)
 {
+	t_table table;
+	
 	if (argc == 5 || argc == 6)
 	{
-		// actual program
+		parse_input(&table, argv);
+
+		data_init(&table);
+
+		dinner_start(&table);
+
+		clean_up(&table);
 	}
 	else
 	{
-		// error handling
+		error_exit("Wrong input:\n"
+			Green"Usage: ./philo 5 800 200 200 [5]\n"reset);
 	}
 }

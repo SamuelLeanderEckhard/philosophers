@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philos.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:51 by seckhard          #+#    #+#             */
-/*   Updated: 2024/03/03 18:28:22 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:32:52 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,18 @@
 
 #include <sys/time.h>
 #include <limits.h>
-typedef struct s_table	t_table;
 
+// Foreground colors
+#define Black "\033[30m"
+#define Red "\033[31m"
+#define Green "\033[32m"
+#define Yellow "\033[33m"
+#define Blue "\033[34m"
+#define Magenta "\033[35m"
+#define Cyan "\r[36m"
+#define White "\033[37m"
+
+typedef struct s_table	t_table;
 
 typedef struct s_forks
 {
@@ -44,10 +54,11 @@ typedef struct	s_philos
 	t_forks		*left_fork;
 	t_forks		*right_fork;
 	t_table		*table;
-}		t_philos;
+}			t_philos;
 
 typedef struct s_table
 {	
+	long		philo_nbr;
 	long		time_to_die;
 	long		time_to_eat;
 	long		time_to_sleep;
@@ -59,7 +70,9 @@ typedef struct s_table
 }			t_table;
 
 
+void    error_exit(const char *error);
 
+void	parse_input(t_table *table, char **argv);
 
 
 #endif
