@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:46:01 by seckhard          #+#    #+#             */
-/*   Updated: 2024/04/29 17:46:01 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:23:10 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*safe_malloc(size_t size)
 }
 
 static void	handle_thread_error(int status, t_opcode opcode)
-{
 	if (status == EINVAL)
 		error_exit("The value specified by thread does not refer to an \
 		initialized thread object.");
