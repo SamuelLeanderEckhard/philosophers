@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   safe_functions.c                                   :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:46:01 by seckhard          #+#    #+#             */
-/*   Updated: 2024/05/08 18:05:06 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:24:56 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,26 +61,7 @@ static void	handle_mutex_error(int error_code)
 		error_exit("The current thread does not own the mutex.");
 }
 
-void	safe_mutex_handle(t_philos *mutex, t_opcode opcode)
+void	safe_mutex_handle(t_philos *mutex)
 {
-	if (opcode == INIT)
-	{
-		if (pthread_mutex_init(mutex, NULL))
-			error_exit("Mutex init failed");
-	}
-	else if (opcode == DESTROY)
-	{
-		if (pthread_mutex_destroy(mutex))
-			error_exit("Mutex destroy failed");
-	}
-	else if (opcode == LOCK)
-	{
-		if (pthread_mutex_lock(mutex))
-			error_exit("Mutex lock failed");
-	}
-	else if (opcode == UNLOCK)
-	{
-		if (pthread_mutex_unlock(mutex))
-			error_exit("Mutex unlock failed");
-	}
+	
 }

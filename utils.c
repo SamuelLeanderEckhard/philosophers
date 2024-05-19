@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:00:10 by seckhard          #+#    #+#             */
-/*   Updated: 2024/04/29 16:53:51 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:02:01 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error_exit(const char *error)
 {
-	printf(Red" %s \n"reset, error);
+	printf(" %s \n", error);
 	exit(FAILURE);
 }

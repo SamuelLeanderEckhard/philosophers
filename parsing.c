@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 16:58:35 by seckhard          #+#    #+#             */
-/*   Updated: 2024/05/08 18:04:50 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:54:06 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	parse_input(t_table *table, char **argv)
 		|| table->time_to_sleep < 6e3)
 		error_exit("Time must be more than 60ms");
 	if (argv[5])
-		table->limit_meals = ft_atol(argv[5]);
+		table->meals = ft_atol(argv[5]);
 	else
-		table->limit_meals = -1;
+		table->meals = -1;
 }

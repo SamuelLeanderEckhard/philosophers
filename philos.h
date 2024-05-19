@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:51 by seckhard          #+#    #+#             */
-/*   Updated: 2024/05/08 19:08:34 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:54:29 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,61 +23,29 @@
 #include <stdbool.h>
 #include <pthread.h>
 #include <errno.h>
-
 #include <sys/time.h>
 #include <limits.h>
 
-// Foreground colors
-# define RESET    "\033[0m"
-# define Black "\033[30m"
-# define Red "\033[31m"
-# define Green "\033[32m"
-# define Yellow "\033[33m"
-# define Blue "\033[34m"
-# define Magenta "\033[35m"
-# define Cyan "\r[36m"
-# define White "\033[37m"
-
-typedef enum	e_opcode
-{
-	INIT,
-	DESTROY,
-	LOCK,
-	UNLOCK
-}				t_opcode;
-
-typedef struct s_table	t_table;
-
-typedef struct s_forks
-{
-	pthread_mutex_t	fork;
-	int	number_of_forks;
-}			t_forks;
-
-typedef struct	s_philos
-{
-	int			id;
-	double		meals;
-	bool		full;
-	double		last_meal;
-	pthread_t	number_of_philosophers;
-	t_forks		*first_fork;
-	t_forks		*second_fork;
-	t_table		*table;
-}			t_philos;
-
 typedef struct s_table
-{	
-	long		philo_nbr;
-	long		time_to_die;
-	long		time_to_eat;
-	long		time_to_sleep;
-	long		start;
-	bool		end;
-	long		limit_meals;
-	t_forks		*forks;
-	t_philos	*philos;
-}			t_table;
+{
+	int		philo_nbr;
+	int		time_to_die;
+	int		time_to_eat;
+	int		time_to_sleep;
+	int		num_must_eat;
+	size_t  meals;
+}	t_table;
+
+typedef struct s_philos
+{
+	pthread_t	*phil;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	mutex;
+	int		pos;
+	int		num_eaten;
+	int		must_eat;
+	int		last_time_ate;
+}	t_philos;
 
 
 void    error_exit(const char *error);
@@ -85,7 +53,7 @@ void    error_exit(const char *error);
 void	parse_input(t_table *table, char **argv);
 
 void	*safe_malloc(size_t size);
-void	safe_mutex_handle(t_philos *mutex, t_opcode opcode);
+void	safe_mutex_handle(t_philos *mutex, );
 
 
 #endif
