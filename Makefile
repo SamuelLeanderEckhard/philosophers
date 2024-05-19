@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seckhard <seckhard@student.42.fr>          +#+  +:+       +#+         #
+#    By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 17:10:12 by seckhard          #+#    #+#              #
-#    Updated: 2024/03/03 16:25:32 by seckhard         ###   ########.fr        #
+#    Updated: 2024/05/08 18:02:31 by seckhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJECTS 		= $(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 # Compiler and CFlags
 CC 				= cc
 CFLAGS			= -Wall -Wextra -Werror -I$(INCLUDE_DIR)
-LDFLAGS			=
+LDFLAGS			= 
 
 # Build Rules
 $(NAME): 		$(OBJECTS)

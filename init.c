@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/03 17:56:57 by seckhard          #+#    #+#             */
-/*   Updated: 2024/05/03 17:17:04 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/07 20:26:04 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ static void	assign_forks(t_philo *philo, t_fork *forks, \
 	}
 }
 
-int	init_and_alloc()
+static void	 philo_table(t_table *table)
 {
-	
+	int	i;
+	t_philos	
 }
 
 void	data_init(t_table *table)

@@ -6,7 +6,7 @@
 /*   By: seckhard <seckhard@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:10:51 by seckhard          #+#    #+#             */
-/*   Updated: 2024/05/03 17:16:09 by seckhard         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:08:34 by seckhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,15 @@
 #include <limits.h>
 
 // Foreground colors
-#define Black "\033[30m"
-#define Red "\033[31m"
-#define Green "\033[32m"
-#define Yellow "\033[33m"
-#define Blue "\033[34m"
-#define Magenta "\033[35m"
-#define Cyan "\r[36m"
-#define White "\033[37m"
+# define RESET    "\033[0m"
+# define Black "\033[30m"
+# define Red "\033[31m"
+# define Green "\033[32m"
+# define Yellow "\033[33m"
+# define Blue "\033[34m"
+# define Magenta "\033[35m"
+# define Cyan "\r[36m"
+# define White "\033[37m"
 
 typedef enum	e_opcode
 {
